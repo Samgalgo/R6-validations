@@ -60,6 +60,7 @@ class CustomersController < ApplicationController
         flash.now.alert = @customer.errors.full_messages.to_sentence
         render :edit
       end
+  end
 # ^^^THE UPDATE METHOD WITH ERROR HANDLING
 
     #  @customer.update(customer_params)
@@ -77,20 +78,21 @@ class CustomersController < ApplicationController
     #     format.json { render json: @customer.errors, status: :unprocessable_entity }
     #   end
     # end
-  end
+    
 
   # DELETE /customers/1 or /customers/1.json
-  def destroy
+    def destroy
     @customer.destroy
     respond_to do |format|
       format.html { redirect_to customers_url, notice: "Customer was successfully destroyed." }
       format.json { head :no_content }
+      end
     end
-  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_customer
+      # byebug
       @customer = Customer.find(params[:id])
     end
 

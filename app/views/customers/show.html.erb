@@ -19,6 +19,17 @@
   <strong>Email:</strong>
   <%= @customer.email %>
 </p>
+<br>
 
+<div>
+  <% if @customer.orders.present? %> <%# This will only show our div ORDER if there are any orders, if not then ORDERS HEADER will not show up%>
+  <% end %>
+  <%@customer.orders.each do |order|%>
+  <%= render partial: "orders/orders", locals: {order: order} %>
+  <%end%>
+</div>
+
+<br>
+<br>
 <%= link_to 'Edit', edit_customer_path(@customer) %> |
 <%= link_to 'Back', customers_path %>
