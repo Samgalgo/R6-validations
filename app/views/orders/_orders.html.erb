@@ -1,0 +1,25 @@
+<h2>Order id: <%= order.id %></h2>
+  
+
+<table>
+  <thead>
+    <th> Product Name </th>
+    <th> Product Count </th>
+    <tr>
+  </thead>
+  
+  <tbody>
+  <td><%= order.product_name %></td>
+  <td><%= order.product_count %></td>
+  <td><%= link_to 'Show', order %></td>
+  <td><%= link_to 'Edit', edit_order_path(order) %></td>
+  <td><%= link_to 'Delete', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>
+
+  </tbody>
+</table>
+  
+  <br>
+    
+
+
